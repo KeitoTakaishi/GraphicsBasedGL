@@ -14,12 +14,14 @@ uniform mat4 gmv;
 uniform mat4 gmvp;
 
 uniform mat4 view;
+uniform mat4 proj;
 uniform mat4 modelViewProjectionMatrix;
 in vec4 position;
 
 void main(){
     gl_Position = p * v * m * position;
     gl_Position = gmvp * position;
+    gl_Position = proj * view * m * position;
 
     
     //gl_Position = gp * gv * gm * position;
