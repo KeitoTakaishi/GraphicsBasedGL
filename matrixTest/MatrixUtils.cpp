@@ -41,10 +41,14 @@ glm::mat4 MatrixUtils::lookAt(glm::vec3 e, glm::vec3 u, glm::vec3 t) {
 	y1 *= l;
 	y2 *= l;
 
-	glm::vec4 x = glm::vec4(x0, x1, x2, 0);
+	/*glm::vec4 x = glm::vec4(x0, x1, x2, 0);
 	glm::vec4 y = glm::vec4(y0, y1, y2, 0);
-	glm::vec4 z = glm::vec4(z0, z1, z2, 0);
-	glm::vec4 w = glm::vec4(-(x0 * eye[0] + x1 * eye[1] + x2 * eye[2]),
+	glm::vec4 z = glm::vec4(z0, z1, z2, 0);*/
+	glm::vec4 x = glm::vec4(x0, y0, z0, 0);
+	glm::vec4 y = glm::vec4(x1, y1, z1, 0);
+	glm::vec4 z = glm::vec4(x2, y2, z2, 0);
+	glm::vec4 w = glm::vec4(
+		-(x0 * eye[0] + x1 * eye[1] + x2 * eye[2]),
 		-(y0 * eye[0] + y1 * eye[1] + y2 * eye[2]),
 		-(z0 * eye[0] + z1 * eye[1] + z2 * eye[2]),
 		1.0);
